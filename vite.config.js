@@ -11,5 +11,5 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
-  test: { globals: true } // import describe,it,expect globally
+  test: { globals: true, setupFiles: ['./tests/setup.js'] } // import describe,it,expect globally
 })
