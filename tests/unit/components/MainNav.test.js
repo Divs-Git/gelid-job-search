@@ -19,4 +19,20 @@ describe('MainNav', () => {
     const companyName = screen.getByText('Gelid Careers');
     expect(companyName).toBeInTheDocument();
   });
+
+  it('displays menu items for nav bar', () => {
+    render(MainNav);
+    const navigationMenuItems = screen.getAllByRole('listitem');
+    const navigationMenuItemsText = navigationMenuItems.map(
+      (item) => item.textContent
+    );
+
+    expect(navigationMenuItemsText).toEqual([
+      'Teams',
+      'Locations',
+      'Benefits',
+      'Jobs',
+      'Students',
+    ]);
+  });
 });
